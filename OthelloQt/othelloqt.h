@@ -5,6 +5,8 @@
 #include "ui_othelloqt.h"
 #include "lib/Othello_lib.h"
 #include "dialogueConfiguration.h"
+#include <string.h>
+#include <QMessageBox>
 
 class OthelloQt : public QMainWindow
 {
