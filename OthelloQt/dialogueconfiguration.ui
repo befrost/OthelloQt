@@ -77,7 +77,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="spinBox"/>
+         <widget class="QSpinBox" name="nbRan"/>
         </item>
        </layout>
       </item>
@@ -96,7 +96,7 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="spinBox_2"/>
+         <widget class="QSpinBox" name="nbCol"/>
         </item>
        </layout>
       </item>

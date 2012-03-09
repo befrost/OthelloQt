@@ -26,8 +26,14 @@ public:
 private:
     Othello * othellier;
     dialogueConfiguration * dia;
+    Ui::OthelloQtClass ui;
 
-    /*! \brief
+// surtout pas oublier de mettre les méthodes suivantes dans slots, sinon la connexion ne se fera pas
+
+
+private slots:
+
+     /*! \brief
      *  Methode qui permet de gérer tout ce qui concerne les actions
      *  \param aucun
      *  \return aucun
@@ -42,9 +48,6 @@ private:
      */
 
     void nouvellePartie();
-
-
-    Ui::OthelloQtClass ui;
 };
 
 #endif // OTHELLOQT_H

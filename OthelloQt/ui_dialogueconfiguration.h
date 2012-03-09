@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'dialogueconfiguration.ui'
 **
-** Created: Fri 9. Mar 18:18:50 2012
+** Created: Fri 9. Mar 18:57:56 2012
 **      by: Qt User Interface Compiler version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -38,10 +38,10 @@ public:
     QHBoxLayout *horizontalLayout;
     QVBoxLayout *verticalLayout;
     QLabel *label_2;
-    QSpinBox *spinBox;
+    QSpinBox *nbRan;
     QVBoxLayout *verticalLayout_2;
     QLabel *label_3;
-    QSpinBox *spinBox_2;
+    QSpinBox *nbCol;
 
     void setupUi(QDialog *dialogueConfigurationClass)
     {
@@ -93,10 +93,10 @@ public:
 
         verticalLayout->addWidget(label_2);
 
-        spinBox = new QSpinBox(verticalLayoutWidget_3);
-        spinBox->setObjectName(QString::fromUtf8("spinBox"));
+        nbRan = new QSpinBox(verticalLayoutWidget_3);
+        nbRan->setObjectName(QString::fromUtf8("nbRan"));
 
-        verticalLayout->addWidget(spinBox);
+        verticalLayout->addWidget(nbRan);
 
 
         horizontalLayout->addLayout(verticalLayout);
@@ -110,10 +110,10 @@ public:
 
         verticalLayout_2->addWidget(label_3);
 
-        spinBox_2 = new QSpinBox(verticalLayoutWidget_3);
-        spinBox_2->setObjectName(QString::fromUtf8("spinBox_2"));
+        nbCol = new QSpinBox(verticalLayoutWidget_3);
+        nbCol->setObjectName(QString::fromUtf8("nbCol"));
 
-        verticalLayout_2->addWidget(spinBox_2);
+        verticalLayout_2->addWidget(nbCol);
 
 
         horizontalLayout->addLayout(verticalLayout_2);

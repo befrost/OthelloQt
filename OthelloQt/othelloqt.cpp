@@ -14,9 +14,9 @@ void OthelloQt::creerAction(){
 }
 
 void OthelloQt::nouvellePartie(){
-	dia = new dialogueConfiguration();
+	dia = new dialogueConfiguration(this);
 	dia->show();
-    int retour = dia->exec();
+    //int retour = dia->exec();
 }
 
 OthelloQt::~OthelloQt()
