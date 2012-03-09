@@ -1,29 +1,96 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>OthelloQtClass</class>
- <widget class="QMainWindow" name="OthelloQtClass" >
-  <property name="geometry" >
+ <widget class="QMainWindow" name="OthelloQtClass">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>248</width>
+    <height>305</height>
    </rect>
   </property>
-  <property name="windowTitle" >
-   <string>MainWindow</string>
+  <property name="windowTitle">
+   <string>Jouer à Othello</string>
   </property>
-  <widget class="QWidget" name="centralwidget" />
-  <widget class="QMenuBar" name="menubar" >
-   <property name="geometry" >
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
-     <height>21</height>
+     <width>248</width>
+     <height>20</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuOthello">
+    <property name="title">
+     <string>Othello</string>
+    </property>
+    <addaction name="actionNouveau"/>
+    <addaction name="actionFermer"/>
+    <addaction name="actionQuitter"/>
+   </widget>
+   <widget class="QMenu" name="menuObservateurs">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="title">
+     <string>Observateurs</string>
+    </property>
+    <addaction name="actionTexte"/>
+    <addaction name="actionExpert"/>
+   </widget>
+   <widget class="QMenu" name="menuA_propos">
+    <property name="title">
+     <string>A propos</string>
+    </property>
+    <addaction name="actionOthello"/>
+    <addaction name="actionAuteur"/>
+   </widget>
+   <addaction name="menuOthello"/>
+   <addaction name="menuObservateurs"/>
+   <addaction name="menuA_propos"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar" />
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionOthello">
+   <property name="text">
+    <string>Othello</string>
+   </property>
+  </action>
+  <action name="actionAuteur">
+   <property name="text">
+    <string>Auteur</string>
+   </property>
+  </action>
+  <action name="actionNouveau">
+   <property name="text">
+    <string>Nouveau</string>
+   </property>
+  </action>
+  <action name="actionFermer">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Fermer</string>
+   </property>
+  </action>
+  <action name="actionQuitter">
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+  </action>
+  <action name="actionTexte">
+   <property name="text">
+    <string>Texte</string>
+   </property>
+  </action>
+  <action name="actionExpert">
+   <property name="text">
+    <string>Expert</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
