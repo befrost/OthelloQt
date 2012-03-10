@@ -3,7 +3,7 @@
 
 #include <QtGui/QMainWindow>
 #include "ui_othelloqt.h"
-#include "lib/Othello_lib.h"
+#include "Othello.h"
 #include "dialogueConfiguration.h"
 #include <string.h>
 #include <QMessageBox>
@@ -50,6 +50,12 @@ private slots:
      */
 
     void nouvellePartie();
+
+    /* \brief
+     * Methode qui permet de mettre fin à une partie en cours
+     */
+
+    void fermerPartie();
 };
 
 #endif // OTHELLOQT_H

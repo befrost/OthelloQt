@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'dialogueconfiguration.ui'
 **
-** Created: Fri 9. Mar 18:57:56 2012
+** Created: Sat 10. Mar 22:51:31 2012
 **      by: Qt User Interface Compiler version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -95,6 +95,9 @@ public:
 
         nbRan = new QSpinBox(verticalLayoutWidget_3);
         nbRan->setObjectName(QString::fromUtf8("nbRan"));
+        nbRan->setMinimum(1);
+        nbRan->setMaximum(8);
+        nbRan->setValue(8);
 
         verticalLayout->addWidget(nbRan);
 
@@ -112,6 +115,9 @@ public:
 
         nbCol = new QSpinBox(verticalLayoutWidget_3);
         nbCol->setObjectName(QString::fromUtf8("nbCol"));
+        nbCol->setMinimum(1);
+        nbCol->setMaximum(8);
+        nbCol->setValue(8);
 
         verticalLayout_2->addWidget(nbCol);
 

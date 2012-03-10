@@ -25,11 +25,11 @@ void dialogueConfiguration::setNbColonnes(int nb){
 }
 
 
-int dialogueConfiguration::getNbCol(){
+unsigned dialogueConfiguration::getNbCol(){
 	return nbCol;
 }
 
-int dialogueConfiguration::getNbRan(){
+unsigned dialogueConfiguration::getNbRan(){
 	return nbRan;
 }
 

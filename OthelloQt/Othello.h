@@ -1,5 +1,4 @@
-/*
- * Othello.h
+/* * Othello.h
  *
  *  Created on: Février 2012
  *      Author: SMB

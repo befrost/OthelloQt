@@ -16,18 +16,18 @@ public:
      *  Getter :
      *  \return le nombre de colonnes
      */
-    int getNbCol();
+    unsigned getNbCol();
 
     /*! \brief
      *  Getter :
      *  \return le nombre de rangees
      */
 
-    int getNbRan();
+    unsigned getNbRan();
 
 private:
     // on les met à 8 car si  pas de value change = pas de connexion et donc pas initialisé
-    int nbCol , nbRan;
+    unsigned nbCol , nbRan;
     Ui::dialogueConfigurationClass ui;
 
 

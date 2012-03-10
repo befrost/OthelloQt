@@ -27,18 +27,27 @@ void OthelloQt::nouvellePartie(){
 		ui.actionFermer->setEnabled(true);
 
 		try{
+			othellier = new Othello(dia->getNbRan(),dia->getNbCol());
 
-		}catch(std::string &ex){
-				std::string test = ex;
-				QString qstr = QString::fromStdString(ex);
-				QMessageBox::information((QWidget *)this, "Information", qstr);
+		}catch(std::logic_error &ex){
+			    std::string info = ex.what();
+				QString erreur = QString::fromStdString(info);
+				QMessageBox::information((QWidget *)this, "Information", erreur);
+				ui.actionFermer->setEnabled(false);
+				ui.menuObservateurs->setEnabled(false);
+				ui.actionNouveau->setEnabled(true);
 		}
 
 
 	}
 
+}
 
+// A verifier
 
+void OthelloQt::fermerPartie(){
+	othellier = 0;
+	delete othellier;
 }
 
 OthelloQt::~OthelloQt()

@@ -41,6 +41,7 @@
 	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 	<storageModule moduleId="org.eclipse.cdt.core.pathentry">
 		<pathentry kind="src" path=""/>
+		<pathentry kind="out" path=""/>
 		<pathentry include="C:/MinGW/include" kind="inc" path="" system="true"/>
 		<pathentry include="C:/MinGW/lib/gcc/mingw32/4.5.2/include/c++/mingw32" kind="inc" path="" system="true"/>
 		<pathentry include="C:/MinGW/lib/gcc/mingw32/4.5.2/include/c++/tr1" kind="inc" path="" system="true"/>
@@ -98,6 +99,5 @@
 		<pathentry include="C:/Qt/4.7.3/include/QtWebKit" kind="inc" path="" system="true"/>
 		<pathentry include="C:/Qt/4.7.3/include/QtXml" kind="inc" path="" system="true"/>
 		<pathentry include="C:/Qt/4.7.3/include/QtXmlPatterns" kind="inc" path="" system="true"/>
-		<pathentry kind="out" path=""/>
 	</storageModule>
 </cproject>

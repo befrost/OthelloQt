@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'othelloqt.ui'
 **
-** Created: Fri 9. Mar 17:21:48 2012
+** Created: Sat 10. Mar 22:51:31 2012
 **      by: Qt User Interface Compiler version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
