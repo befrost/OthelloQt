@@ -77,16 +77,30 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="nbRan">
-          <property name="minimum">
-           <number>1</number>
+         <widget class="QComboBox" name="nbRan">
+          <property name="currentIndex">
+           <number>2</number>
           </property>
-          <property name="maximum">
-           <number>8</number>
-          </property>
-          <property name="value">
-           <number>8</number>
-          </property>
+          <item>
+           <property name="text">
+            <string>4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>8</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>12</string>
+           </property>
+          </item>
          </widget>
         </item>
        </layout>
@@ -106,16 +120,25 @@ p, li { white-space: pre-wrap; }
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="nbCol">
-          <property name="minimum">
-           <number>1</number>
+         <widget class="QComboBox" name="nbCol">
+          <property name="currentIndex">
+           <number>2</number>
           </property>
-          <property name="maximum">
-           <number>8</number>
-          </property>
-          <property name="value">
-           <number>8</number>
-          </property>
+          <item>
+           <property name="text">
+            <string>4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>8</string>
+           </property>
+          </item>
          </widget>
         </item>
        </layout>

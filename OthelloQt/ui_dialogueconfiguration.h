@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'dialogueconfiguration.ui'
 **
-** Created: Sat 10. Mar 22:51:31 2012
+** Created: Tue 13. Mar 15:10:29 2012
 **      by: Qt User Interface Compiler version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -14,12 +14,12 @@
 #include <QtGui/QAction>
 #include <QtGui/QApplication>
 #include <QtGui/QButtonGroup>
+#include <QtGui/QComboBox>
 #include <QtGui/QDialog>
 #include <QtGui/QHBoxLayout>
 #include <QtGui/QHeaderView>
 #include <QtGui/QLabel>
 #include <QtGui/QPushButton>
-#include <QtGui/QSpinBox>
 #include <QtGui/QVBoxLayout>
 #include <QtGui/QWidget>
 
@@ -38,10 +38,10 @@ public:
     QHBoxLayout *horizontalLayout;
     QVBoxLayout *verticalLayout;
     QLabel *label_2;
-    QSpinBox *nbRan;
+    QComboBox *nbRan;
     QVBoxLayout *verticalLayout_2;
     QLabel *label_3;
-    QSpinBox *nbCol;
+    QComboBox *nbCol;
 
     void setupUi(QDialog *dialogueConfigurationClass)
     {
@@ -93,11 +93,8 @@ public:
 
         verticalLayout->addWidget(label_2);
 
-        nbRan = new QSpinBox(verticalLayoutWidget_3);
+        nbRan = new QComboBox(verticalLayoutWidget_3);
         nbRan->setObjectName(QString::fromUtf8("nbRan"));
-        nbRan->setMinimum(1);
-        nbRan->setMaximum(8);
-        nbRan->setValue(8);
 
         verticalLayout->addWidget(nbRan);
 
@@ -113,11 +110,8 @@ public:
 
         verticalLayout_2->addWidget(label_3);
 
-        nbCol = new QSpinBox(verticalLayoutWidget_3);
+        nbCol = new QComboBox(verticalLayoutWidget_3);
         nbCol->setObjectName(QString::fromUtf8("nbCol"));
-        nbCol->setMinimum(1);
-        nbCol->setMaximum(8);
-        nbCol->setValue(8);
 
         verticalLayout_2->addWidget(nbCol);
 
@@ -129,6 +123,10 @@ public:
 
 
         retranslateUi(dialogueConfigurationClass);
+
+        nbRan->setCurrentIndex(2);
+        nbCol->setCurrentIndex(2);
+
 
         QMetaObject::connectSlotsByName(dialogueConfigurationClass);
     } // setupUi
@@ -144,7 +142,20 @@ public:
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">Taille de l'othellier</span></p></body></html>", 0, QApplication::UnicodeUTF8));
         label_2->setText(QApplication::translate("dialogueConfigurationClass", "Rang\303\251es", 0, QApplication::UnicodeUTF8));
+        nbRan->clear();
+        nbRan->insertItems(0, QStringList()
+         << QApplication::translate("dialogueConfigurationClass", "4", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("dialogueConfigurationClass", "6", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("dialogueConfigurationClass", "8", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("dialogueConfigurationClass", "12", 0, QApplication::UnicodeUTF8)
+        );
         label_3->setText(QApplication::translate("dialogueConfigurationClass", "Colonnes", 0, QApplication::UnicodeUTF8));
+        nbCol->clear();
+        nbCol->insertItems(0, QStringList()
+         << QApplication::translate("dialogueConfigurationClass", "4", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("dialogueConfigurationClass", "6", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("dialogueConfigurationClass", "8", 0, QApplication::UnicodeUTF8)
+        );
     } // retranslateUi
 
 };

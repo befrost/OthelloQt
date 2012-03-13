@@ -51,11 +51,18 @@ private slots:
 
     void nouvellePartie();
 
+
     /* \brief
      * Methode qui permet de mettre fin à une partie en cours
      */
 
     void fermerPartie();
+
+    /* \brief
+     * Methode qui permet de jouer des coups
+     */
+
+    void jouerCoup();
 };
 
 #endif // OTHELLOQT_H
