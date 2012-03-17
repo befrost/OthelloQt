@@ -1,5 +1,6 @@
 #include "othelloqt.h"
 
+
 OthelloQt::OthelloQt(QWidget *parent)
     : QMainWindow(parent)
 {
@@ -9,6 +10,10 @@ OthelloQt::OthelloQt(QWidget *parent)
 
 void OthelloQt::creerAction(){
 	connect(ui.actionNouveau, SIGNAL(triggered(bool)), this, SLOT(nouvellePartie()));
+	connect(ui.placer, SIGNAL(clicked()), this, SLOT(jouerCoup()));
+	connect(ui.actionQuitter, SIGNAL(triggered(bool)), qApp, SLOT(quit()));
+	connect(ui.actionFermer, SIGNAL(triggered(bool)), this, SLOT(fermerPartie()));
+	connect(ui.actionTexte, SIGNAL(triggered(bool)), this, SLOT(obsTexte(bool)));
 
 }
 
@@ -31,6 +36,7 @@ void OthelloQt::nouvellePartie(){
 	if(retour == 1){
 		// On active le menu observateur
 		ui.menuObservateurs->setEnabled(true);
+		ui.frame->setEnabled(true);
 		ui.actionNouveau->setEnabled(false);
 		ui.actionFermer->setEnabled(true);
 
@@ -44,6 +50,7 @@ void OthelloQt::nouvellePartie(){
 				ui.actionFermer->setEnabled(false);
 				ui.menuObservateurs->setEnabled(false);
 				ui.actionNouveau->setEnabled(true);
+				ui.frame->setEnabled(false);
 		}
 
 
@@ -80,6 +87,21 @@ void OthelloQt::jouerCoup(){
 	    QString erreur = QString::fromStdString(info);
 	    QMessageBox::information((QWidget *)this, "Information", erreur);
 	}
+}
+
+void OthelloQt::obsTexte(bool actif){
+	  if(actif){
+		  //if(obsPro == 0){
+		  obsTxt = new observateurTexte();
+
+		  //}
+
+		  //obsTxt->show();
+	  }
+	  else
+	  {
+		  obsTxt->hide();
+	  }
 }
 
 

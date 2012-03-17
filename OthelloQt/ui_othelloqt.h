@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'othelloqt.ui'
 **
-** Created: Tue 13. Mar 21:20:23 2012
+** Created: Sat 17. Mar 13:44:09 2012
 **      by: Qt User Interface Compiler version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -22,6 +22,7 @@
 #include <QtGui/QMainWindow>
 #include <QtGui/QMenu>
 #include <QtGui/QMenuBar>
+#include <QtGui/QPushButton>
 #include <QtGui/QRadioButton>
 #include <QtGui/QStatusBar>
 #include <QtGui/QWidget>
@@ -46,6 +47,7 @@ public:
     QComboBox *rangee;
     QComboBox *colonne;
     QLabel *label;
+    QPushButton *placer;
     QMenuBar *menubar;
     QMenu *menuOthello;
     QMenu *menuObservateurs;
@@ -76,8 +78,9 @@ public:
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         frame = new QFrame(centralwidget);
         frame->setObjectName(QString::fromUtf8("frame"));
-        frame->setGeometry(QRect(20, 40, 171, 191));
-        frame->setFrameShape(QFrame::StyledPanel);
+        frame->setEnabled(false);
+        frame->setGeometry(QRect(10, 40, 201, 251));
+        frame->setFrameShape(QFrame::Box);
         frame->setFrameShadow(QFrame::Sunken);
         frame->setLineWidth(10);
         pion = new QGroupBox(frame);
@@ -86,18 +89,22 @@ public:
         blanc = new QRadioButton(pion);
         blanc->setObjectName(QString::fromUtf8("blanc"));
         blanc->setGeometry(QRect(20, 30, 82, 17));
+        blanc->setChecked(true);
         noir = new QRadioButton(pion);
         noir->setObjectName(QString::fromUtf8("noir"));
         noir->setGeometry(QRect(20, 60, 82, 17));
         rangee = new QComboBox(frame);
         rangee->setObjectName(QString::fromUtf8("rangee"));
-        rangee->setGeometry(QRect(10, 140, 69, 22));
+        rangee->setGeometry(QRect(20, 140, 69, 22));
         colonne = new QComboBox(frame);
         colonne->setObjectName(QString::fromUtf8("colonne"));
-        colonne->setGeometry(QRect(90, 140, 69, 22));
+        colonne->setGeometry(QRect(100, 140, 69, 22));
         label = new QLabel(frame);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(40, 10, 61, 16));
+        placer = new QPushButton(frame);
+        placer->setObjectName(QString::fromUtf8("placer"));
+        placer->setGeometry(QRect(50, 190, 75, 23));
         OthelloQtClass->setCentralWidget(centralwidget);
         menubar = new QMenuBar(OthelloQtClass);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -144,6 +151,7 @@ public:
         blanc->setText(QApplication::translate("OthelloQtClass", "BLANC", 0, QApplication::UnicodeUTF8));
         noir->setText(QApplication::translate("OthelloQtClass", "NOIR", 0, QApplication::UnicodeUTF8));
         label->setText(QApplication::translate("OthelloQtClass", "Controleur", 0, QApplication::UnicodeUTF8));
+        placer->setText(QApplication::translate("OthelloQtClass", "Placer", 0, QApplication::UnicodeUTF8));
         menuOthello->setTitle(QApplication::translate("OthelloQtClass", "Othello", 0, QApplication::UnicodeUTF8));
         menuObservateurs->setTitle(QApplication::translate("OthelloQtClass", "Observateurs", 0, QApplication::UnicodeUTF8));
         menuA_propos->setTitle(QApplication::translate("OthelloQtClass", "A propos", 0, QApplication::UnicodeUTF8));

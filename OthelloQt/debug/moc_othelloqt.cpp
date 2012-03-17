@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'othelloqt.h'
 **
-** Created: Tue 13. Mar 21:20:40 2012
+** Created: Sat 17. Mar 14:04:11 2012
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.3)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_OthelloQt[] = {
        5,       // revision
        0,       // classname
        0,    0, // classinfo
-       4,   14, // methods
+       5,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -35,13 +35,15 @@ static const uint qt_meta_data_OthelloQt[] = {
       25,   10,   10,   10, 0x08,
       42,   10,   10,   10, 0x08,
       57,   10,   10,   10, 0x08,
+      75,   69,   10,   10, 0x08,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_OthelloQt[] = {
     "OthelloQt\0\0creerAction()\0nouvellePartie()\0"
-    "fermerPartie()\0jouerCoup()\0"
+    "fermerPartie()\0jouerCoup()\0actif\0"
+    "obsTexte(bool)\0"
 };
 
 const QMetaObject OthelloQt::staticMetaObject = {
@@ -77,9 +79,10 @@ int OthelloQt::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         case 1: nouvellePartie(); break;
         case 2: fermerPartie(); break;
         case 3: jouerCoup(); break;
+        case 4: obsTexte((*reinterpret_cast< bool(*)>(_a[1]))); break;
         default: ;
         }
-        _id -= 4;
+        _id -= 5;
     }
     return _id;
 }

@@ -15,16 +15,19 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="frame">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
-      <x>20</x>
+      <x>10</x>
       <y>40</y>
-      <width>171</width>
-      <height>191</height>
+      <width>201</width>
+      <height>251</height>
      </rect>
     </property>
     <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
+     <enum>QFrame::Box</enum>
     </property>
     <property name="frameShadow">
      <enum>QFrame::Sunken</enum>
@@ -56,6 +59,9 @@
       <property name="text">
        <string>BLANC</string>
       </property>
+      <property name="checked">
+       <bool>true</bool>
+      </property>
      </widget>
      <widget class="QRadioButton" name="noir">
       <property name="geometry">
@@ -74,7 +80,7 @@
     <widget class="QComboBox" name="rangee">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>20</x>
        <y>140</y>
        <width>69</width>
        <height>22</height>
@@ -84,7 +90,7 @@
     <widget class="QComboBox" name="colonne">
      <property name="geometry">
       <rect>
-       <x>90</x>
+       <x>100</x>
        <y>140</y>
        <width>69</width>
        <height>22</height>
@@ -102,6 +108,19 @@
      </property>
      <property name="text">
       <string>Controleur</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="placer">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>190</y>
+       <width>75</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Placer</string>
      </property>
     </widget>
    </widget>

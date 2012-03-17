@@ -5,8 +5,10 @@
 #include "ui_othelloqt.h"
 #include "Othello.h"
 #include "dialogueConfiguration.h"
+#include "observateurTexte.h"
 #include <string.h>
 #include <QMessageBox>
+
 
 class OthelloQt : public QMainWindow
 {
@@ -28,6 +30,7 @@ public:
 private:
     Othello * othellier;
     dialogueConfiguration * dia;
+    observateurTexte * obsTxt;
     Ui::OthelloQtClass ui;
 
 // surtout pas oublier de mettre les méthodes suivantes dans slots, sinon la connexion ne se fera pas
@@ -63,6 +66,12 @@ private slots:
      */
 
     void jouerCoup();
+
+    /* \brief
+     * Methode qui permet d'afficher l'observateur text
+     */
+
+    void obsTexte(bool actif);
 };
 
 #endif // OTHELLOQT_H
