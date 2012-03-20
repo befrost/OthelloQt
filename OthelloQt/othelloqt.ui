@@ -193,6 +193,9 @@
    </property>
   </action>
   <action name="actionTexte">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>Texte</string>
    </property>

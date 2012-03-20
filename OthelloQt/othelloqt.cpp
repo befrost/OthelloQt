@@ -91,12 +91,12 @@ void OthelloQt::jouerCoup(){
 
 void OthelloQt::obsTexte(bool actif){
 	  if(actif){
-		  //if(obsPro == 0){
-		  obsTxt = new observateurTexte();
+		  //if(obsTxt == 0){
+		  obsTxt = new observateurTexte(othellier);
 
 		  //}
 
-		  //obsTxt->show();
+		  obsTxt->show();
 	  }
 	  else
 	  {

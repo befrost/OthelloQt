@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'othelloqt.ui'
 **
-** Created: Sat 17. Mar 13:44:09 2012
+** Created: Tue 20. Mar 11:28:16 2012
 **      by: Qt User Interface Compiler version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -72,6 +72,7 @@ public:
         actionQuitter->setObjectName(QString::fromUtf8("actionQuitter"));
         actionTexte = new QAction(OthelloQtClass);
         actionTexte->setObjectName(QString::fromUtf8("actionTexte"));
+        actionTexte->setCheckable(true);
         actionExpert = new QAction(OthelloQtClass);
         actionExpert->setObjectName(QString::fromUtf8("actionExpert"));
         centralwidget = new QWidget(OthelloQtClass);
