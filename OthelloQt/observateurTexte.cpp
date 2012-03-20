@@ -12,12 +12,17 @@ observateurTexte::observateurTexte() : QLabel() {
 
 }
 
-observateurTexte::observateurTexte(Othello * oth) : QLabel(){
-	   //Qt::WindowFlags flags = 0;
-	   //flags |= Qt::CustomizeWindowHint;
-	   //flags |= Qt::WindowTitleHint;
-	   //setWindowFlags(flags);
-	//this->setText("haha");
+observateurTexte::observateurTexte(Othello * othellier) : QLabel(){
+	   Qt::WindowFlags flags = 0;
+	   flags |= Qt::CustomizeWindowHint;
+	   flags |= Qt::WindowTitleHint;
+	   setWindowFlags(flags);
+	   oth = othellier;
+	   rafraichir();
+}
+
+void observateurTexte::rafraichir(){
+	this->setText(oth->toString().c_str());
 }
 
 observateurTexte::~observateurTexte() {

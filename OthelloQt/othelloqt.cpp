@@ -22,11 +22,11 @@ void OthelloQt::nouvellePartie(){
 	dia->show();
 
 	QString alphabet = "ABCDEFGHIJKL";
-	for(unsigned int i = 0; i < dia->getNbRan();i++){
-		ui.rangee->addItem((QString)alphabet[i]);
+	for(unsigned int i = 0; i < dia->getNbCol();i++){
+		ui.colonne->addItem((QString)alphabet[i]);
 	}
-	for(unsigned int i = 1; i <= dia->getNbCol();i++){
-		ui.colonne->addItem(QString::number(i));
+	for(unsigned int i = 1; i <= dia->getNbRan();i++){
+		ui.rangee->addItem(QString::number(i));
 	}
 
 	// on regarde comment la fenêtre s'est fermée
@@ -73,8 +73,8 @@ void OthelloQt::jouerCoup(){
 
 	  // permet de récupérer la valeur d'un combobox
 
-	  pos.numR = (ui.rangee->itemData(ui.rangee->currentIndex())).toInt();
-	  pos.numC = (ui.colonne->itemData(ui.colonne->currentIndex())).toInt();
+	  pos.numR = (ui.rangee->currentIndex());
+	  pos.numC = (ui.colonne->currentIndex());
 
 	  if(ui.blanc->isChecked()){
 		  pion = true;

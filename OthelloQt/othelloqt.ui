@@ -77,26 +77,6 @@
       </property>
      </widget>
     </widget>
-    <widget class="QComboBox" name="rangee">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>140</y>
-       <width>69</width>
-       <height>22</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="QComboBox" name="colonne">
-     <property name="geometry">
-      <rect>
-       <x>100</x>
-       <y>140</y>
-       <width>69</width>
-       <height>22</height>
-      </rect>
-     </property>
-    </widget>
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
@@ -121,6 +101,26 @@
      </property>
      <property name="text">
       <string>Placer</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="colonne">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>140</y>
+       <width>69</width>
+       <height>22</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="rangee">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>140</y>
+       <width>69</width>
+       <height>22</height>
+      </rect>
      </property>
     </widget>
    </widget>

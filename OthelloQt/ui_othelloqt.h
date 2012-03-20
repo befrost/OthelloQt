@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'othelloqt.ui'
 **
-** Created: Tue 20. Mar 11:28:16 2012
+** Created: Tue 20. Mar 12:16:19 2012
 **      by: Qt User Interface Compiler version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -44,10 +44,10 @@ public:
     QGroupBox *pion;
     QRadioButton *blanc;
     QRadioButton *noir;
-    QComboBox *rangee;
-    QComboBox *colonne;
     QLabel *label;
     QPushButton *placer;
+    QComboBox *colonne;
+    QComboBox *rangee;
     QMenuBar *menubar;
     QMenu *menuOthello;
     QMenu *menuObservateurs;
@@ -94,18 +94,18 @@ public:
         noir = new QRadioButton(pion);
         noir->setObjectName(QString::fromUtf8("noir"));
         noir->setGeometry(QRect(20, 60, 82, 17));
-        rangee = new QComboBox(frame);
-        rangee->setObjectName(QString::fromUtf8("rangee"));
-        rangee->setGeometry(QRect(20, 140, 69, 22));
-        colonne = new QComboBox(frame);
-        colonne->setObjectName(QString::fromUtf8("colonne"));
-        colonne->setGeometry(QRect(100, 140, 69, 22));
         label = new QLabel(frame);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(40, 10, 61, 16));
         placer = new QPushButton(frame);
         placer->setObjectName(QString::fromUtf8("placer"));
         placer->setGeometry(QRect(50, 190, 75, 23));
+        colonne = new QComboBox(frame);
+        colonne->setObjectName(QString::fromUtf8("colonne"));
+        colonne->setGeometry(QRect(20, 140, 69, 22));
+        rangee = new QComboBox(frame);
+        rangee->setObjectName(QString::fromUtf8("rangee"));
+        rangee->setGeometry(QRect(100, 140, 69, 22));
         OthelloQtClass->setCentralWidget(centralwidget);
         menubar = new QMenuBar(OthelloQtClass);
         menubar->setObjectName(QString::fromUtf8("menubar"));

@@ -19,8 +19,11 @@ Q_OBJECT
 
 public:
 	observateurTexte();
-	observateurTexte(Othello * oth);
+	observateurTexte(Othello * othellier);
 	virtual ~observateurTexte();
+private:
+	Othello * oth;
+	void rafraichir();
 };
 
 #endif /* OBSERVATEURTEXTE_H_ */
