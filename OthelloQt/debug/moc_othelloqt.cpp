@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'othelloqt.h'
 **
-** Created: Thu 22. Mar 19:01:52 2012
+** Created: Thu 22. Mar 19:21:30 2012
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.3)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -65,6 +65,8 @@ void *OthelloQt::qt_metacast(const char *_clname)
     if (!_clname) return 0;
     if (!strcmp(_clname, qt_meta_stringdata_OthelloQt))
         return static_cast<void*>(const_cast< OthelloQt*>(this));
+    if (!strcmp(_clname, "SujetDObservation"))
+        return static_cast< SujetDObservation*>(const_cast< OthelloQt*>(this));
     return QMainWindow::qt_metacast(_clname);
 }
 

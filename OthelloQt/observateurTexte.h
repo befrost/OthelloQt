@@ -7,13 +7,14 @@
 
 #include <QLabel>
 #include "Othello.h"
+#include "O_SDO/observateur.h"
 
 
 #ifndef OBSERVATEURTEXTE_H_
 #define OBSERVATEURTEXTE_H_
 
 
-class observateurTexte : public QLabel {
+class observateurTexte : public QLabel, public Observateur {
 
 Q_OBJECT
 
@@ -23,7 +24,7 @@ public:
 	virtual ~observateurTexte();
 private:
 	Othello * oth;
-	void rafraichir();
+	void rafraichir(SujetDObservation * sdo);
 	void closeEvent(QCloseEvent * e);
 signals:
     void masque();

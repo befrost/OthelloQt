@@ -18,10 +18,9 @@ observateurTexte::observateurTexte(Othello * othellier) : QLabel(){
 	   flags |= Qt::WindowTitleHint;
 	   setWindowFlags(flags);
 	   oth = othellier;
-	   rafraichir();
 }
 
-void observateurTexte::rafraichir(){
+void observateurTexte::rafraichir(SujetDObservation * sdo){
 	this->setText(oth->toString().c_str());
 }
 

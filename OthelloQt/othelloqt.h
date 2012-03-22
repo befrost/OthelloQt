@@ -6,11 +6,12 @@
 #include "Othello.h"
 #include "dialogueConfiguration.h"
 #include "observateurTexte.h"
+#include "O_SDO/sujetDObservation.h"
 #include <string.h>
 #include <QMessageBox>
 
 
-class OthelloQt : public QMainWindow
+class OthelloQt : public QMainWindow, public SujetDObservation
 {
     Q_OBJECT
 

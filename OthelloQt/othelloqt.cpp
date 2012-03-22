@@ -42,7 +42,6 @@ void OthelloQt::nouvellePartie(){
 
 		try{
 			othellier = new Othello(dia->getNbRan(),dia->getNbCol());
-
 		}catch(std::logic_error &ex){
 			    std::string info = ex.what();
 				QString erreur = QString::fromStdString(info);
@@ -87,12 +86,15 @@ void OthelloQt::jouerCoup(){
 	    QString erreur = QString::fromStdString(info);
 	    QMessageBox::information((QWidget *)this, "Information", erreur);
 	}
+	this->notifierChangement();
 }
 
 void OthelloQt::obsTexte(bool actif){
 	  if(actif){
 		  //if(obsTxt == 0){
 		  obsTxt = new observateurTexte(othellier);
+		  this->attacher(obsTxt);
+		  this->notifierChangement();
 
 		  //}
 
