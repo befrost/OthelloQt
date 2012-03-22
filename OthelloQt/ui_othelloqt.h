@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'othelloqt.ui'
 **
-** Created: Tue 20. Mar 12:16:19 2012
+** Created: Thu 22. Mar 19:57:10 2012
 **      by: Qt User Interface Compiler version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -90,10 +90,11 @@ public:
         blanc = new QRadioButton(pion);
         blanc->setObjectName(QString::fromUtf8("blanc"));
         blanc->setGeometry(QRect(20, 30, 82, 17));
-        blanc->setChecked(true);
+        blanc->setChecked(false);
         noir = new QRadioButton(pion);
         noir->setObjectName(QString::fromUtf8("noir"));
         noir->setGeometry(QRect(20, 60, 82, 17));
+        noir->setChecked(true);
         label = new QLabel(frame);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(40, 10, 61, 16));

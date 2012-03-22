@@ -87,6 +87,11 @@ void OthelloQt::jouerCoup(){
 	    QMessageBox::information((QWidget *)this, "Information", erreur);
 	}
 	this->notifierChangement();
+	if(othellier->aQuiLeTour() == 1){
+		ui.blanc->setChecked(true);
+	}else{
+		ui.noir->setChecked(true);
+    }
 }
 
 void OthelloQt::obsTexte(bool actif){

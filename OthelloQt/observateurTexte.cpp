@@ -25,9 +25,9 @@ void observateurTexte::rafraichir(SujetDObservation * sdo){
 	  this->setText(oth->toString().c_str());
 	}else{
 	  switch (oth->vainqueur()){
-	     case 'VIDE' : this->setText("Match nul");break;
-	     case 'BLANC' : this->setText("Victoire du blanc"); break;
-	     case 'NOIR' : this->setText("Victoire du noir"); break;
+	     case 0 : this->setText("Match nul");break;
+	     case 1 : this->setText("Victoire du blanc"); break;
+	     case 2 : this->setText("Victoire du noir"); break;
 	  }
 	}
 }
