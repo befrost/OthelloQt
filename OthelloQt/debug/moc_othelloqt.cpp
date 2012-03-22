@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'othelloqt.h'
 **
-** Created: Tue 20. Mar 12:16:35 2012
+** Created: Thu 22. Mar 19:01:52 2012
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.3)
 **
 ** WARNING! All changes made in this file will be lost!

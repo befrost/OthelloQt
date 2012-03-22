@@ -32,6 +32,7 @@ private:
     dialogueConfiguration * dia;
     observateurTexte * obsTxt;
     Ui::OthelloQtClass ui;
+    virtual void closeEvent(QCloseEvent *);
 
 // surtout pas oublier de mettre les méthodes suivantes dans slots, sinon la connexion ne se fera pas
 

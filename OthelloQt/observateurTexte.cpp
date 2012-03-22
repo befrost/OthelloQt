@@ -25,6 +25,11 @@ void observateurTexte::rafraichir(){
 	this->setText(oth->toString().c_str());
 }
 
+void observateurTexte::closeEvent(QCloseEvent * e){
+	emit masque();
+	//e->accept();
+}
+
 observateurTexte::~observateurTexte() {
 	// TODO Auto-generated destructor stub
 }

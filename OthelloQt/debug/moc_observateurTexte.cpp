@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'observateurTexte.h'
 **
-** Created: Tue 20. Mar 11:38:36 2012
+** Created: Thu 22. Mar 18:53:58 2012
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.3)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,18 +23,21 @@ static const uint qt_meta_data_observateurTexte[] = {
        5,       // revision
        0,       // classname
        0,    0, // classinfo
-       0,    0, // methods
+       1,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       0,       // signalCount
+       1,       // signalCount
+
+ // signals: signature, parameters, type, tag, flags
+      18,   17,   17,   17, 0x05,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_observateurTexte[] = {
-    "observateurTexte\0"
+    "observateurTexte\0\0masque()\0"
 };
 
 const QMetaObject observateurTexte::staticMetaObject = {
@@ -64,6 +67,19 @@ int observateurTexte::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     _id = QLabel::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        switch (_id) {
+        case 0: masque(); break;
+        default: ;
+        }
+        _id -= 1;
+    }
     return _id;
+}
+
+// SIGNAL 0
+void observateurTexte::masque()
+{
+    QMetaObject::activate(this, &staticMetaObject, 0, 0);
 }
 QT_END_MOC_NAMESPACE

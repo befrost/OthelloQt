@@ -24,6 +24,9 @@ public:
 private:
 	Othello * oth;
 	void rafraichir();
+	void closeEvent(QCloseEvent * e);
+signals:
+    void masque();
 };
 
 #endif /* OBSERVATEURTEXTE_H_ */

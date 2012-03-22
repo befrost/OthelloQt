@@ -105,6 +105,10 @@ void OthelloQt::obsTexte(bool actif){
 }
 
 
+void OthelloQt::closeEvent(QCloseEvent *){
+	delete obsTxt;
+}
+
 OthelloQt::~OthelloQt()
 {
 
