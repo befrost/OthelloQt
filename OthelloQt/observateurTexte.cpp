@@ -21,7 +21,15 @@ observateurTexte::observateurTexte(Othello * othellier) : QLabel(){
 }
 
 void observateurTexte::rafraichir(SujetDObservation * sdo){
-	this->setText(oth->toString().c_str());
+	if(!oth->estFini()){
+	  this->setText(oth->toString().c_str());
+	}else{
+	  switch (oth->vainqueur()){
+	     case 'VIDE' : this->setText("Match nul");break;
+	     case 'BLANC' : this->setText("Victoire du blanc"); break;
+	     case 'NOIR' : this->setText("Victoire du noir"); break;
+	  }
+	}
 }
 
 void observateurTexte::closeEvent(QCloseEvent * e){
