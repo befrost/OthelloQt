@@ -74,6 +74,18 @@ private slots:
      */
 
     void obsTexte(bool actif);
+
+    /* \brief
+     * Permet d'afficher un cadre avec les joueurs du jeu.
+     */
+
+    void auteur();
+
+    /* \brief
+     * Permet d'afficher les règles du jeu.
+     */
+
+    void regles();
 };
 
 #endif // OTHELLOQT_H

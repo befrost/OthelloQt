@@ -6,6 +6,12 @@ OthelloQt::OthelloQt(QWidget *parent)
 {
 	ui.setupUi(this);
 	ui.frame->hide();								//cache les contrôles car aucune partie lancée
+	ui.actionNouveau->setShortcut(QKeySequence(tr("Ctrl+N")));
+	ui.actionQuitter->setShortcut(QKeySequence(tr("Ctrl+Q")));
+	ui.actionFermer->setShortcut(QKeySequence(tr("Ctrl+F")));
+	ui.actionTexte->setShortcut(QKeySequence(tr("Ctrl+T")));
+	ui.actionOthello->setShortcut(QKeySequence(tr("Ctrl+R")));
+	ui.actionAuteur->setShortcut(QKeySequence(tr("Ctrl+A")));
 	creerAction();
 }
 
@@ -15,6 +21,8 @@ void OthelloQt::creerAction(){
 	connect(ui.actionQuitter, SIGNAL(triggered(bool)), qApp, SLOT(quit()));
 	connect(ui.actionFermer, SIGNAL(triggered(bool)), this, SLOT(fermerPartie()));
 	connect(ui.actionTexte, SIGNAL(triggered(bool)), this, SLOT(obsTexte(bool)));
+	connect(ui.actionAuteur, SIGNAL(triggered(bool)), this, SLOT(auteur()));
+	connect(ui.actionOthello, SIGNAL(triggered(bool)), this, SLOT(regles()));
 
 }
 
@@ -124,6 +132,41 @@ void OthelloQt::obsTexte(bool actif){
 
 void OthelloQt::closeEvent(QCloseEvent *){
 	delete obsTxt;
+}
+
+void OthelloQt::auteur(){
+	QMessageBox::information((QWidget *)this, "Auteurs", "Jean Sebastien Maya Bravo <p> Arnaud Hinderickx");
+
+}
+
+void OthelloQt::regles(){
+   QString message;
+	message = "<p>Il s'agit d'un jeu opposant deux joueurs: ";
+	message += "le joueur aux pions blancs et le joueurs aux pions noirs. ";
+	message += "En fait, chaque pion a une face de chaque couleur.</p>";
+	message +=
+			"<p> Chaque joueur essaye de placer un pion de sa couleur, sur une case vide :";
+	message +=
+			"<ul> <p> -adjacente à une case contenant un pion de l'autre couleur,</p>";
+	message +=
+			"<p> -de manière à ce que ce pion placé encadreavec un autre pion";
+	message +=
+			"de la même couleur 1 ou plusieurs pions de l'autre couleur.</p>";
+	message +=
+			"<p><i> L'encadreement ne peut contenir de cases vides et peut se faire";
+	message += "horizontalement, verticalement ou en diagonale.";
+	message += "les pions encadrés sont ensuite retournées.</i></p></ul>";
+	message +=
+			"<p> Chaque joueur joue à son tour. C'est toujours le joueur noir qui commence.</p>";
+	message += "<p> Quand un joueur ne peut pas jouer, il passe son tour.</p>";
+	message +=
+			"<p> Quand plus aucun joueur ne peut jouer, le jeu est terminé.</p>";
+	message +=
+			"<p> Le nombre de pion de chaque couleur détermine le vainqueur.</p>";
+	message +=
+			"<p><a href=\"http://www.ffothello.org/\">En savoir plus ... </a></p><br/>";
+	message += "<p><b>Bon amusement !</b></p>";
+	QMessageBox::information((QWidget *)this, "Règles",message);
 }
 
 OthelloQt::~OthelloQt()
