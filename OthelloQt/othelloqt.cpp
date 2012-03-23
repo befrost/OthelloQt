@@ -107,7 +107,7 @@ void OthelloQt::jouerCoup(){
 void OthelloQt::obsTexte(bool actif){
 	  if(actif){
 		  //if(obsTxt == 0){
-		  obsTxt = new observateurTexte(othellier);
+		  obsTxt = new observateurTexte(othellier, this->pos());
 		  this->attacher(obsTxt);
 		  this->notifierChangement();
 

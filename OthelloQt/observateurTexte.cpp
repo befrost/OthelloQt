@@ -12,7 +12,9 @@ observateurTexte::observateurTexte() : QLabel() {
 
 }
 
-observateurTexte::observateurTexte(Othello * othellier) : QLabel(){
+observateurTexte::observateurTexte(Othello * othellier, QPoint  pos) : QLabel(){
+
+	   this->move(pos.x() + 300, pos.y());
 	   Qt::WindowFlags flags = 0;
 	   QFont sansFont("Lucida Console", 12);		//police à utiliser
 	   sansFont.setWordSpacing(5);
