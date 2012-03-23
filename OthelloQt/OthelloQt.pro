@@ -9,6 +9,7 @@ HEADERS += O_SDO/observateur.h \
     dialogueconfiguration.h \
     othelloqt.h
 SOURCES += O_SDO/sujetDObservation.cpp \
+    O_SDO/sujetDObservation.cpp \
     observateurTexte.cpp \
     dialogueconfiguration.cpp \
     main.cpp \

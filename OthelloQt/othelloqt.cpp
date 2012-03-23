@@ -5,6 +5,7 @@ OthelloQt::OthelloQt(QWidget *parent)
     : QMainWindow(parent)
 {
 	ui.setupUi(this);
+	ui.frame->hide();								//cache les contrôles car aucune partie lancée
 	creerAction();
 }
 
@@ -19,7 +20,10 @@ void OthelloQt::creerAction(){
 
 void OthelloQt::nouvellePartie(){
 	dia = new dialogueConfiguration(this);
-	dia->show();
+	//dia->show();
+	//on regarde comment la fenêtre s'est fermée
+	int retour = dia->exec();
+
 
 	QString alphabet = "ABCDEFGHIJKL";
 	for(unsigned int i = 0; i < dia->getNbCol();i++){
@@ -29,8 +33,6 @@ void OthelloQt::nouvellePartie(){
 		ui.rangee->addItem(QString::number(i));
 	}
 
-	// on regarde comment la fenêtre s'est fermée
-	int retour = dia->exec();
 
 	// Ca s'est déroulé correctement
 	if(retour == 1){
@@ -42,6 +44,7 @@ void OthelloQt::nouvellePartie(){
 
 		try{
 			othellier = new Othello(dia->getNbRan(),dia->getNbCol());
+			ui.frame->show();
 		}catch(std::logic_error &ex){
 			    std::string info = ex.what();
 				QString erreur = QString::fromStdString(info);
@@ -61,6 +64,13 @@ void OthelloQt::nouvellePartie(){
 
 void OthelloQt::fermerPartie(){
 	othellier = 0;
+	ui.frame->hide();						//cache les contrôles
+	obsTxt->hide();							//cache l'observateur
+	ui.actionTexte->setChecked(false);		//décoche l'observateur
+	ui.actionFermer->setEnabled(false);
+	ui.menuObservateurs->setEnabled(false);
+	ui.actionNouveau->setEnabled(true);
+	ui.frame->setEnabled(false);
 	delete othellier;
 }
 
@@ -120,3 +130,5 @@ OthelloQt::~OthelloQt()
 {
 
 }
+
+

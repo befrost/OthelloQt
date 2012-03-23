@@ -14,9 +14,14 @@ observateurTexte::observateurTexte() : QLabel() {
 
 observateurTexte::observateurTexte(Othello * othellier) : QLabel(){
 	   Qt::WindowFlags flags = 0;
+	   QFont sansFont("Lucida Console", 12);		//police à utiliser
+	   sansFont.setWordSpacing(5);
 	   flags |= Qt::CustomizeWindowHint;
 	   flags |= Qt::WindowTitleHint;
 	   setWindowFlags(flags);
+	   this->setMinimumWidth(200);
+	   this->setFont(sansFont);						//défini la police
+
 	   oth = othellier;
 }
 

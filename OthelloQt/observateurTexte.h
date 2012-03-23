@@ -6,6 +6,7 @@
  */
 
 #include <QLabel>
+#include <QVBoxLayout>
 #include "Othello.h"
 #include "O_SDO/observateur.h"
 

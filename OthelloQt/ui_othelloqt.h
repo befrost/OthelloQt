@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'othelloqt.ui'
 **
-** Created: Thu 22. Mar 19:57:10 2012
+** Created: Fri 23. Mar 00:43:09 2012
 **      by: Qt User Interface Compiler version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -58,7 +58,9 @@ public:
     {
         if (OthelloQtClass->objectName().isEmpty())
             OthelloQtClass->setObjectName(QString::fromUtf8("OthelloQtClass"));
-        OthelloQtClass->resize(248, 368);
+        OthelloQtClass->resize(250, 360);
+        OthelloQtClass->setMinimumSize(QSize(250, 360));
+        OthelloQtClass->setMaximumSize(QSize(250, 360));
         actionOthello = new QAction(OthelloQtClass);
         actionOthello->setObjectName(QString::fromUtf8("actionOthello"));
         actionAuteur = new QAction(OthelloQtClass);
@@ -80,10 +82,11 @@ public:
         frame = new QFrame(centralwidget);
         frame->setObjectName(QString::fromUtf8("frame"));
         frame->setEnabled(false);
-        frame->setGeometry(QRect(10, 40, 201, 251));
-        frame->setFrameShape(QFrame::Box);
-        frame->setFrameShadow(QFrame::Sunken);
-        frame->setLineWidth(10);
+        frame->setGeometry(QRect(30, 40, 190, 245));
+        frame->setFrameShape(QFrame::Panel);
+        frame->setFrameShadow(QFrame::Raised);
+        frame->setLineWidth(4);
+        frame->setMidLineWidth(0);
         pion = new QGroupBox(frame);
         pion->setObjectName(QString::fromUtf8("pion"));
         pion->setGeometry(QRect(20, 40, 120, 80));
@@ -110,7 +113,7 @@ public:
         OthelloQtClass->setCentralWidget(centralwidget);
         menubar = new QMenuBar(OthelloQtClass);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 248, 20));
+        menubar->setGeometry(QRect(0, 0, 250, 22));
         menuOthello = new QMenu(menubar);
         menuOthello->setObjectName(QString::fromUtf8("menuOthello"));
         menuObservateurs = new QMenu(menubar);

@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'dialogueconfiguration.ui'
 **
-** Created: Sat 17. Mar 13:44:08 2012
+** Created: Thu 22. Mar 23:40:49 2012
 **      by: Qt User Interface Compiler version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -76,6 +76,7 @@ public:
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
         label = new QLabel(verticalLayoutWidget_3);
         label->setObjectName(QString::fromUtf8("label"));
+        label->setScaledContents(false);
 
         verticalLayout_3->addWidget(label);
 
@@ -147,6 +148,7 @@ public:
          << QApplication::translate("dialogueConfigurationClass", "4", 0, QApplication::UnicodeUTF8)
          << QApplication::translate("dialogueConfigurationClass", "6", 0, QApplication::UnicodeUTF8)
          << QApplication::translate("dialogueConfigurationClass", "8", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("dialogueConfigurationClass", "10", 0, QApplication::UnicodeUTF8)
          << QApplication::translate("dialogueConfigurationClass", "12", 0, QApplication::UnicodeUTF8)
         );
         label_3->setText(QApplication::translate("dialogueConfigurationClass", "Colonnes", 0, QApplication::UnicodeUTF8));
@@ -155,6 +157,8 @@ public:
          << QApplication::translate("dialogueConfigurationClass", "4", 0, QApplication::UnicodeUTF8)
          << QApplication::translate("dialogueConfigurationClass", "6", 0, QApplication::UnicodeUTF8)
          << QApplication::translate("dialogueConfigurationClass", "8", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("dialogueConfigurationClass", "10", 0, QApplication::UnicodeUTF8)
+         << QApplication::translate("dialogueConfigurationClass", "12", 0, QApplication::UnicodeUTF8)
         );
     } // retranslateUi
 

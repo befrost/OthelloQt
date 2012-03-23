@@ -58,6 +58,9 @@ p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Taille de l'othellier&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
+      <property name="scaledContents">
+       <bool>false</bool>
+      </property>
      </widget>
     </item>
     <item>
@@ -94,6 +97,11 @@ p, li { white-space: pre-wrap; }
           <item>
            <property name="text">
             <string>8</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>10</string>
            </property>
           </item>
           <item>
@@ -137,6 +145,16 @@ p, li { white-space: pre-wrap; }
           <item>
            <property name="text">
             <string>8</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>10</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>12</string>
            </property>
           </item>
          </widget>
