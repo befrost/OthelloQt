@@ -292,7 +292,6 @@ std::string OthelloQt::coupsToString() {						//Traduit la liste des coups jouée
 			case 9 :col = 'J';break;
 			case 10 :col = 'K';break;
 			case 11 :col = 'L';break;
-			case 12 :col = 'M';break;
 			default : col = 'Z'; break;
 		}
 		str << col << " " << positions.at(i).pos.numR+1 << std::endl ;

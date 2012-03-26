@@ -22,7 +22,7 @@ observateurTexte::observateurTexte(Othello * othellier, QPoint  pos) : QLabel(){
 	   flags |= Qt::CustomizeWindowHint;
 	   flags |= Qt::WindowTitleHint;
 	   setWindowFlags(flags);
-	   this->setMinimumWidth(500);
+	   this->setMinimumWidth(650);
 	   this->setFont(sansFont);						//défini la police
 
 
@@ -39,7 +39,8 @@ observateurTexte::observateurTexte(Othello * othellier, QPoint  pos) : QLabel(){
        vuePlateau->setObjectName(QString::fromUtf8("vuePlateau"));
        horizontalLayout->addWidget(vuePlateau);
        scrollArea = new QScrollArea(this);
-       scrollArea->setFixedWidth(185);
+       //scrollArea->setFixedWidth(185);
+       scrollArea->setMinimumWidth(185);
        scrollArea->setObjectName(QString::fromUtf8("scrollArea"));
        scrollArea->setWidgetResizable(true);
        scrollAreaWidgetContents = new QWidget();
@@ -66,7 +67,7 @@ void observateurTexte::rafraichir(SujetDObservation * sdo){
 	othQt = (OthelloQt * ) sdo;
 	if(!oth->estFini()){
 		std::string str, str2;
-		str = "Liste des coups \n" + othQt->coupsToString();
+		str = "Liste des coups :\n\n" + othQt->coupsToString();
 		listeCoups->setText(str.c_str());
 		str2 = oth->toString();
 	  this->vuePlateau->setText(str2.c_str());
