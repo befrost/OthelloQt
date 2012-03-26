@@ -5,18 +5,23 @@ OthelloQt::OthelloQt(QWidget *parent)
     : QMainWindow(parent)
 {
 	ui.setupUi(this);
-	ui.frame->hide();								//cache les contrôles car aucune partie lancée
+	ui.frame->hide();												//cache les contrôles car aucune partie lancée
 	ui.actionNouveau->setShortcut(QKeySequence(tr("Ctrl+N")));
+	ui.actionCharger->setShortcut(QKeySequence(tr("Ctrl+C")));
+	ui.actionSauver->setShortcut(QKeySequence(tr("Ctrl+S")));
 	ui.actionQuitter->setShortcut(QKeySequence(tr("Ctrl+Q")));
 	ui.actionFermer->setShortcut(QKeySequence(tr("Ctrl+F")));
 	ui.actionTexte->setShortcut(QKeySequence(tr("Ctrl+T")));
 	ui.actionOthello->setShortcut(QKeySequence(tr("Ctrl+R")));
 	ui.actionAuteur->setShortcut(QKeySequence(tr("Ctrl+A")));
+	obsTxt = 0;
 	creerAction();
 }
 
 void OthelloQt::creerAction(){
 	connect(ui.actionNouveau, SIGNAL(triggered(bool)), this, SLOT(nouvellePartie()));
+	connect(ui.actionSauver, SIGNAL(triggered(bool)), this, SLOT(sauverPartie()));
+	connect(ui.actionCharger, SIGNAL(triggered(bool)), this, SLOT(chargerPartie()));
 	connect(ui.placer, SIGNAL(clicked()), this, SLOT(jouerCoup()));
 	connect(ui.actionQuitter, SIGNAL(triggered(bool)), qApp, SLOT(quit()));
 	connect(ui.actionFermer, SIGNAL(triggered(bool)), this, SLOT(fermerPartie()));
@@ -72,13 +77,19 @@ void OthelloQt::nouvellePartie(){
 
 void OthelloQt::fermerPartie(){
 	othellier = 0;
-	ui.frame->hide();						//cache les contrôles
-	obsTxt->hide();							//cache l'observateur
-	ui.actionTexte->setChecked(false);		//décoche l'observateur
+	ui.frame->hide();							//cache les contrôles
+	if(ui.actionTexte->isChecked()){
+		obsTxt->hide();							//cache l'observateur
+		ui.actionTexte->setChecked(false);		//décoche l'observateur
+	}
+	if(obsTxt !=0){
+		obsTxt = 0 ;							//donne la valeur 0 à l'observateur pour qu'il puisse être recréé.
+	}
 	ui.actionFermer->setEnabled(false);
 	ui.menuObservateurs->setEnabled(false);
 	ui.actionNouveau->setEnabled(true);
 	ui.frame->setEnabled(false);
+	positions.clear();
 	delete othellier;
 }
 
@@ -99,6 +110,7 @@ void OthelloQt::jouerCoup(){
 		  pion = false;
 	  }
 	  othellier->placer(pion, pos);
+	  noterCoup(pion, pos);
 	}catch(std::logic_error &ex){
 		std::string info = ex.what();
 	    QString erreur = QString::fromStdString(info);
@@ -114,12 +126,12 @@ void OthelloQt::jouerCoup(){
 
 void OthelloQt::obsTexte(bool actif){
 	  if(actif){
-		  //if(obsTxt == 0){
-		  obsTxt = new observateurTexte(othellier, this->pos());
-		  this->attacher(obsTxt);
-		  this->notifierChangement();
+		  if(obsTxt == 0){														//pour ne pas recréer l'observateur à chaque appel.
+			  obsTxt = new observateurTexte(othellier, this->pos());
+			  this->attacher(obsTxt);
+			  this->notifierChangement();
+		  }
 
-		  //}
 
 		  obsTxt->show();
 	  }
@@ -172,6 +184,121 @@ void OthelloQt::regles(){
 OthelloQt::~OthelloQt()
 {
 
+}
+void OthelloQt::noterCoup(bool pionBlanc, Position pos){
+	Coup current;
+	current.pionBlanc = pionBlanc;
+	current.pos = pos;
+	this->positions.push_back(current);								//ajoute un coup à la liste des coups joués.
+}
+
+void OthelloQt::sauverPartie() {
+	QString fileName;
+	QString filter = "Othello game (*.oth)";
+	fileName = QFileDialog::getSaveFileName(this, tr("Sauvegarder la partie"),  QDir::currentPath(), filter);	//permet de créer un fichier de sauvegarde *.oth
+	QFile file(fileName);
+	if(!file.open(QIODevice::WriteOnly)) return;
+	QDataStream toSave(&file);
+
+	unsigned taille = positions.size();
+	Coup current;
+	toSave << taille << this->othellier->rangees() << this->othellier->colonnes();			//sauve la taille de la liste et de l'othellier
+	for (unsigned i = 0; i < taille; ++ i) {
+		current = positions.at(i);
+		toSave << current.pionBlanc << current.pos.numC << current.pos.numR;				//sauve chaque coups contenus dans la liste.
+	}
+	file.close();
+
+	//fileName = QFileDialog::getOpenFileName(this,"Choisir un fichier de mots", QDir::currentPath());
+
+}
+
+void OthelloQt::chargerPartie(){
+	bool pionBlanc = true;
+	unsigned taille, nbRan, nbCol;
+	Coup current;
+
+	QString filter = "Othello game (*.oth)";
+
+
+	QString fileName=QFileDialog::getOpenFileName(this,"Charger une partie", QDir::currentPath(), filter);			//Permet d'ouvrir un fichier de sauvegarde *.oth
+	QFile file(fileName);
+	if(!file.open(QIODevice::ReadOnly)) return;
+	QDataStream toLoad(&file);
+	toLoad >> taille >> nbRan >> nbCol;								// Récupère la taille de la liste des coups joués, et la taille d'othellier.
+	if (ui.actionFermer->isEnabled()){
+		this->fermerPartie();
+	}
+
+	QString alphabet = "ABCDEFGHIJKL";
+	ui.colonne->clear();											//remet les comboBox à 0
+	ui.rangee->clear();
+	for(unsigned int i = 0; i < nbCol;i++){							//remplit les combobox avec les nouvelles dimensions
+		ui.colonne->addItem((QString)alphabet[i]);
+	}
+	for(unsigned int i = 1; i <= nbRan;i++){
+		ui.rangee->addItem(QString::number(i));
+	}
+
+	ui.menuObservateurs->setEnabled(true);
+	ui.frame->setEnabled(true);
+	ui.actionNouveau->setEnabled(false);
+	ui.actionFermer->setEnabled(true);
+		try{														//recrée l'othellier
+			this->othellier = new Othello(nbRan,nbCol);
+			ui.frame->show();
+		}catch(std::logic_error &ex){
+			    std::string info = ex.what();
+				QString erreur = QString::fromStdString(info);
+				QMessageBox::information((QWidget *)this, "Information", erreur);
+				ui.actionFermer->setEnabled(false);
+				ui.menuObservateurs->setEnabled(false);
+				ui.actionNouveau->setEnabled(true);
+				ui.frame->setEnabled(false);
+		}
+
+	for (unsigned i = 0; i<taille;++i){												//extrait la liste des coups joués
+		toLoad >> current.pionBlanc >> current.pos.numC >> current.pos.numR;
+		this->positions.push_back(current);
+	}
+	file.close();
+	for (unsigned i = 0; i < taille; ++ i) {										//joue la liste des coups extraits de la sauvegarde
+		pionBlanc = positions.at(i).pionBlanc;
+		current = positions.at(i);
+		this->othellier->placer(current.pionBlanc,current.pos);
+	}
+}
+
+std::string OthelloQt::coupsToString() {						//Traduit la liste des coups jouées en une liste lisible.
+	unsigned taille = positions.size();
+	std::stringstream str;
+	char col;
+	for(unsigned i = 0; i< taille; ++i){
+		if (positions.at(i).pionBlanc) {
+			str << "blanc : ";
+		}else{
+			str << "noir  : ";
+		}
+		switch(positions.at(i).pos.numC){
+			case 0 :col = 'A'; break;
+			case 1 :col = 'B'; break;
+			case 2 :col = 'C'; break;
+			case 3 :col = 'D'; break;
+			case 4 :col = 'E';break;
+			case 5 :col = 'F';break;
+			case 6 :col = 'G';break;
+			case 7 :col = 'H';break;
+			case 8 :col = 'I';break;
+			case 9 :col = 'J';break;
+			case 10 :col = 'K';break;
+			case 11 :col = 'L';break;
+			case 12 :col = 'M';break;
+			default : col = 'Z'; break;
+		}
+		str << col << " " << positions.at(i).pos.numR+1 << std::endl ;
+
+	}
+	return str.str();
 }
 
 

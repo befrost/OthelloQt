@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'othelloqt.ui'
 **
-** Created: Fri 23. Mar 00:43:09 2012
+** Created: Mon 26. Mar 01:50:26 2012
 **      by: Qt User Interface Compiler version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -39,6 +39,8 @@ public:
     QAction *actionQuitter;
     QAction *actionTexte;
     QAction *actionExpert;
+    QAction *actionSauver;
+    QAction *actionCharger;
     QWidget *centralwidget;
     QFrame *frame;
     QGroupBox *pion;
@@ -77,6 +79,10 @@ public:
         actionTexte->setCheckable(true);
         actionExpert = new QAction(OthelloQtClass);
         actionExpert->setObjectName(QString::fromUtf8("actionExpert"));
+        actionSauver = new QAction(OthelloQtClass);
+        actionSauver->setObjectName(QString::fromUtf8("actionSauver"));
+        actionCharger = new QAction(OthelloQtClass);
+        actionCharger->setObjectName(QString::fromUtf8("actionCharger"));
         centralwidget = new QWidget(OthelloQtClass);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         frame = new QFrame(centralwidget);
@@ -130,6 +136,8 @@ public:
         menubar->addAction(menuObservateurs->menuAction());
         menubar->addAction(menuA_propos->menuAction());
         menuOthello->addAction(actionNouveau);
+        menuOthello->addAction(actionCharger);
+        menuOthello->addAction(actionSauver);
         menuOthello->addAction(actionFermer);
         menuOthello->addAction(actionQuitter);
         menuObservateurs->addAction(actionTexte);
@@ -152,6 +160,8 @@ public:
         actionQuitter->setText(QApplication::translate("OthelloQtClass", "Quitter", 0, QApplication::UnicodeUTF8));
         actionTexte->setText(QApplication::translate("OthelloQtClass", "Texte", 0, QApplication::UnicodeUTF8));
         actionExpert->setText(QApplication::translate("OthelloQtClass", "Expert", 0, QApplication::UnicodeUTF8));
+        actionSauver->setText(QApplication::translate("OthelloQtClass", "Sauver", 0, QApplication::UnicodeUTF8));
+        actionCharger->setText(QApplication::translate("OthelloQtClass", "Charger", 0, QApplication::UnicodeUTF8));
         pion->setTitle(QApplication::translate("OthelloQtClass", "Pion", 0, QApplication::UnicodeUTF8));
         blanc->setText(QApplication::translate("OthelloQtClass", "BLANC", 0, QApplication::UnicodeUTF8));
         noir->setText(QApplication::translate("OthelloQtClass", "NOIR", 0, QApplication::UnicodeUTF8));

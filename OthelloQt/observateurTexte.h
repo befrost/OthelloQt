@@ -6,9 +6,11 @@
  */
 
 #include <QLabel>
-#include <QVBoxLayout>
+#include <QHBoxLayout>
 #include "Othello.h"
 #include "O_SDO/observateur.h"
+#include <QScrollArea>
+#include <QWidget>
 #include <QPoint>
 
 
@@ -26,8 +28,10 @@ public:
 	virtual ~observateurTexte();
 private:
 	Othello * oth;
+	QLabel * listeCoups, * vuePlateau;
 	void rafraichir(SujetDObservation * sdo);
 	void closeEvent(QCloseEvent * e);
+
 signals:
     void masque();
 };

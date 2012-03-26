@@ -7,9 +7,19 @@
 #include "dialogueConfiguration.h"
 #include "observateurTexte.h"
 #include "O_SDO/sujetDObservation.h"
+#include <QFileDialog>
+#include <QFile>
+#include <QDataStream>
+#include <vector>
+#include <sstream>
 #include <string.h>
 #include <QMessageBox>
 
+
+struct Coup {							// structure représentant un coup joué.
+	Position pos;						// la position du coup
+	bool pionBlanc;					 	// la couleur du pion placé.
+};
 
 class OthelloQt : public QMainWindow, public SujetDObservation
 {
@@ -26,12 +36,17 @@ public:
      * Destructeur :
      *
      */
+
+    std::string coupsToString();
+
     ~OthelloQt();
 
 private:
+    std::vector<Coup> positions;
     Othello * othellier;
     dialogueConfiguration * dia;
     observateurTexte * obsTxt;
+    void noterCoup(bool pionBlanc, Position pos);
     Ui::OthelloQtClass ui;
     virtual void closeEvent(QCloseEvent *);
 
@@ -86,6 +101,14 @@ private slots:
      */
 
     void regles();
+
+
+
+    void sauverPartie();
+
+
+    void chargerPartie();
 };
+
 
 #endif // OTHELLOQT_H

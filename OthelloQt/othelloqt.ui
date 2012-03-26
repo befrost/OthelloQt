@@ -157,6 +157,8 @@
      <string>Othello</string>
     </property>
     <addaction name="actionNouveau"/>
+    <addaction name="actionCharger"/>
+    <addaction name="actionSauver"/>
     <addaction name="actionFermer"/>
     <addaction name="actionQuitter"/>
    </widget>
@@ -221,6 +223,16 @@
   <action name="actionExpert">
    <property name="text">
     <string>Expert</string>
+   </property>
+  </action>
+  <action name="actionSauver">
+   <property name="text">
+    <string>Sauver</string>
+   </property>
+  </action>
+  <action name="actionCharger">
+   <property name="text">
+    <string>Charger</string>
    </property>
   </action>
  </widget>
