@@ -1,5 +1,4 @@
 #include "othelloqt.h"
-#include<iostream>
 
 
 OthelloQt::OthelloQt(QWidget *parent)
@@ -129,7 +128,6 @@ void OthelloQt::jouerCoup(){
 }
 
 void OthelloQt::obsTexte(bool actif){
-	std::cout << actif << std::endl;
 	  if(actif){
 		  if(obsTxt == 0){														//pour ne pas recréer l'observateur à chaque appel.
 			  obsTxt = new observateurTexte(othellier, this->pos());
@@ -148,7 +146,6 @@ void OthelloQt::obsTexte(bool actif){
 
 
 void OthelloQt::obsExpert(bool actif) {
-	std::cout << actif << std::endl;
 	ui.centralwidget->hide();
 	ui.actionTexte->setEnabled(false);
 	if (actif) {
