@@ -6,6 +6,7 @@
 #include "Othello.h"
 #include "dialogueConfiguration.h"
 #include "observateurTexte.h"
+#include "observateurExpert.h"
 #include "O_SDO/sujetDObservation.h"
 #include <QFileDialog>
 #include <QFile>
@@ -46,6 +47,7 @@ private:
     Othello * othellier;
     dialogueConfiguration * dia;
     observateurTexte * obsTxt;
+    observateurExpert * obsExpe;
     void noterCoup(bool pionBlanc, Position pos);
     Ui::OthelloQtClass ui;
     virtual void closeEvent(QCloseEvent *);
@@ -89,6 +91,9 @@ private slots:
      */
 
     void obsTexte(bool actif);
+
+
+    void obsExpert(bool actif);
 
     /* \brief
      * Permet d'afficher un cadre avec les joueurs du jeu.

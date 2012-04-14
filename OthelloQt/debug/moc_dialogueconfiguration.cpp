@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'dialogueconfiguration.h'
 **
-** Created: Thu 22. Mar 23:40:59 2012
+** Created: Sat 14. Apr 17:39:32 2012
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.3)
 **
 ** WARNING! All changes made in this file will be lost!

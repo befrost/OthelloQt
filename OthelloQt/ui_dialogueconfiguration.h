@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'dialogueconfiguration.ui'
 **
-** Created: Thu 22. Mar 23:40:49 2012
+** Created: Sat 14. Apr 17:39:11 2012
 **      by: Qt User Interface Compiler version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!

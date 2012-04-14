@@ -149,7 +149,7 @@
      <x>0</x>
      <y>0</y>
      <width>250</width>
-     <height>22</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuOthello">
@@ -221,6 +221,9 @@
    </property>
   </action>
   <action name="actionExpert">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
    <property name="text">
     <string>Expert</string>
    </property>

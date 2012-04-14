@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'othelloqt.ui'
 **
-** Created: Mon 26. Mar 01:50:26 2012
+** Created: Sat 14. Apr 17:59:43 2012
 **      by: Qt User Interface Compiler version 4.7.3
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -79,6 +79,7 @@ public:
         actionTexte->setCheckable(true);
         actionExpert = new QAction(OthelloQtClass);
         actionExpert->setObjectName(QString::fromUtf8("actionExpert"));
+        actionExpert->setCheckable(true);
         actionSauver = new QAction(OthelloQtClass);
         actionSauver->setObjectName(QString::fromUtf8("actionSauver"));
         actionCharger = new QAction(OthelloQtClass);
@@ -119,7 +120,7 @@ public:
         OthelloQtClass->setCentralWidget(centralwidget);
         menubar = new QMenuBar(OthelloQtClass);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 250, 22));
+        menubar->setGeometry(QRect(0, 0, 250, 20));
         menuOthello = new QMenu(menubar);
         menuOthello->setObjectName(QString::fromUtf8("menuOthello"));
         menuObservateurs = new QMenu(menubar);

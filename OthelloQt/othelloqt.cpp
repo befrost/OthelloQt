@@ -1,4 +1,5 @@
 #include "othelloqt.h"
+#include<iostream>
 
 
 OthelloQt::OthelloQt(QWidget *parent)
@@ -12,9 +13,11 @@ OthelloQt::OthelloQt(QWidget *parent)
 	ui.actionQuitter->setShortcut(QKeySequence(tr("Ctrl+Q")));
 	ui.actionFermer->setShortcut(QKeySequence(tr("Ctrl+F")));
 	ui.actionTexte->setShortcut(QKeySequence(tr("Ctrl+T")));
+	ui.actionExpert->setShortcut(QKeySequence(tr("Ctrl+E")));
 	ui.actionOthello->setShortcut(QKeySequence(tr("Ctrl+R")));
 	ui.actionAuteur->setShortcut(QKeySequence(tr("Ctrl+A")));
 	obsTxt = 0;
+	obsExpe = 0;
 	creerAction();
 }
 
@@ -26,6 +29,7 @@ void OthelloQt::creerAction(){
 	connect(ui.actionQuitter, SIGNAL(triggered(bool)), qApp, SLOT(quit()));
 	connect(ui.actionFermer, SIGNAL(triggered(bool)), this, SLOT(fermerPartie()));
 	connect(ui.actionTexte, SIGNAL(triggered(bool)), this, SLOT(obsTexte(bool)));
+	connect(ui.actionExpert, SIGNAL(triggered(bool)), this, SLOT(obsExpert(bool)));
 	connect(ui.actionAuteur, SIGNAL(triggered(bool)), this, SLOT(auteur()));
 	connect(ui.actionOthello, SIGNAL(triggered(bool)), this, SLOT(regles()));
 
@@ -125,6 +129,7 @@ void OthelloQt::jouerCoup(){
 }
 
 void OthelloQt::obsTexte(bool actif){
+	std::cout << actif << std::endl;
 	  if(actif){
 		  if(obsTxt == 0){														//pour ne pas recréer l'observateur à chaque appel.
 			  obsTxt = new observateurTexte(othellier, this->pos());
@@ -142,8 +147,25 @@ void OthelloQt::obsTexte(bool actif){
 }
 
 
+void OthelloQt::obsExpert(bool actif) {
+	std::cout << actif << std::endl;
+	ui.centralwidget->hide();
+	ui.actionTexte->setEnabled(false);
+	if (actif) {
+
+		if (obsExpe == 0) { //pour ne pas recréer l'observateur à chaque appel.
+
+			obsExpe = new observateurExpert(othellier, this->pos());
+		}
+		obsExpe->show();
+	} else {
+		obsExpe->hide();
+	}
+}
+
 void OthelloQt::closeEvent(QCloseEvent *){
 	delete obsTxt;
+	delete obsExpe;
 }
 
 void OthelloQt::auteur(){

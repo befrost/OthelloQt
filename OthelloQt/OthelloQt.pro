@@ -2,13 +2,14 @@ TEMPLATE = app
 TARGET = OthelloQt
 QT += core \
     gui
-HEADERS += O_SDO/observateur.h \
+HEADERS += observateurExpert.h \
+    O_SDO/observateur.h \
     O_SDO/sujetDObservation.h \
     observateurTexte.h \
     Othello.h \
     dialogueconfiguration.h \
     othelloqt.h
-SOURCES += O_SDO/sujetDObservation.cpp \
+SOURCES += observateurExpert.cpp \
     O_SDO/sujetDObservation.cpp \
     observateurTexte.cpp \
     dialogueconfiguration.cpp \
@@ -16,6 +17,6 @@ SOURCES += O_SDO/sujetDObservation.cpp \
     othelloqt.cpp
 FORMS += dialogueconfiguration.ui \
     othelloqt.ui
-RESOURCES += 
+RESOURCES += image/res.qrc
 LIBS += -L./lib/ \
     -lothello
