@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'othelloqt.h'
 **
-** Created: Sat 14. Apr 17:59:55 2012
+** Created: Sun 15. Apr 04:11:37 2012
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.3)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -23,7 +23,7 @@ static const uint qt_meta_data_OthelloQt[] = {
        5,       // revision
        0,       // classname
        0,    0, // classinfo
-      10,   14, // methods
+      11,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -39,8 +39,9 @@ static const uint qt_meta_data_OthelloQt[] = {
       90,   69,   10,   10, 0x08,
      106,   10,   10,   10, 0x08,
      115,   10,   10,   10, 0x08,
-     124,   10,   10,   10, 0x08,
-     139,   10,   10,   10, 0x08,
+     127,  124,   10,   10, 0x08,
+     148,   10,   10,   10, 0x08,
+     163,   10,   10,   10, 0x08,
 
        0        // eod
 };
@@ -49,7 +50,8 @@ static const char qt_meta_stringdata_OthelloQt[] = {
     "OthelloQt\0\0creerAction()\0nouvellePartie()\0"
     "fermerPartie()\0jouerCoup()\0actif\0"
     "obsTexte(bool)\0obsExpert(bool)\0auteur()\0"
-    "regles()\0sauverPartie()\0chargerPartie()\0"
+    "regles()\0,,\0change(bool,int,int)\0"
+    "sauverPartie()\0chargerPartie()\0"
 };
 
 const QMetaObject OthelloQt::staticMetaObject = {
@@ -91,11 +93,12 @@ int OthelloQt::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         case 5: obsExpert((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 6: auteur(); break;
         case 7: regles(); break;
-        case 8: sauverPartie(); break;
-        case 9: chargerPartie(); break;
+        case 8: change((*reinterpret_cast< bool(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
+        case 9: sauverPartie(); break;
+        case 10: chargerPartie(); break;
         default: ;
         }
-        _id -= 10;
+        _id -= 11;
     }
     return _id;
 }

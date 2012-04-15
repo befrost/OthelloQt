@@ -107,6 +107,7 @@ private slots:
 
     void regles();
 
+    void change(bool, int, int);
 
 
     void sauverPartie();

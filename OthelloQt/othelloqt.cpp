@@ -85,8 +85,14 @@ void OthelloQt::fermerPartie(){
 		obsTxt->hide();							//cache l'observateur
 		ui.actionTexte->setChecked(false);		//décoche l'observateur
 	}
+
 	if(obsTxt !=0){
 		obsTxt = 0 ;							//donne la valeur 0 à l'observateur pour qu'il puisse être recréé.
+	}
+	if(obsExpe !=0){
+		ui.actionExpert->setChecked(false);
+		delete obsExpe;
+		obsExpe = 0;
 	}
 	ui.actionFermer->setEnabled(false);
 	ui.menuObservateurs->setEnabled(false);
@@ -147,16 +153,21 @@ void OthelloQt::obsTexte(bool actif){
 
 void OthelloQt::obsExpert(bool actif) {
 	ui.centralwidget->hide();
-	ui.actionTexte->setEnabled(false);
+	//ui.actionTexte->setEnabled(false);
 	if (actif) {
 
 		if (obsExpe == 0) { //pour ne pas recréer l'observateur à chaque appel.
 
 			obsExpe = new observateurExpert(othellier, this->pos());
+			connect(obsExpe, SIGNAL(changement(bool, int, int)), this, SLOT(change(bool, int, int)));
+
 		}
 		obsExpe->show();
 	} else {
 		obsExpe->hide();
+		this->notifierChangement();
+		ui.centralwidget->show();
+		//ui.actionTexte->setEnabled(false);
 	}
 }
 
@@ -319,4 +330,9 @@ std::string OthelloQt::coupsToString() {						//Traduit la liste des coups jouée
 	return str.str();
 }
 
+void OthelloQt::change(bool pionBlanc, int r, int c){
+	this->noterCoup(pionBlanc, Position (r, c));
+	this->notifierChangement();
+
+}
 
