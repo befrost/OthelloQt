@@ -1,0 +1,13 @@
+INPUT(
+./debug/sujetDObservation.o
+./debug/dialogueconfiguration.o
+./debug/main.o
+./debug/observateurExpert.o
+./debug/observateurTexte.o
+./debug/othelloqt.o
+./debug/moc_dialogueconfiguration.o
+./debug/moc_observateurExpert.o
+./debug/moc_observateurTexte.o
+./debug/moc_othelloqt.o
+./debug/qrc_res.o
+);
