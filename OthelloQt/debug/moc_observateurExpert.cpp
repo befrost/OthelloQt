@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'observateurExpert.h'
 **
-** Created: Sun 15. Apr 04:11:32 2012
+** Created: Sun 15. Apr 19:23:38 2012
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.3)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -32,16 +32,16 @@ static const uint qt_meta_data_observateurExpert[] = {
 
  // signals: signature, parameters, type, tag, flags
       19,   18,   18,   18, 0x05,
-      31,   28,   18,   18, 0x05,
+      34,   31,   18,   18, 0x05,
 
  // slots: signature, parameters, type, tag, flags
-      60,   56,   18,   18, 0x08,
+      63,   59,   18,   18, 0x08,
 
        0        // eod
 };
 
 static const char qt_meta_stringdata_observateurExpert[] = {
-    "observateurExpert\0\0masque()\0,,\0"
+    "observateurExpert\0\0masque(int)\0,,\0"
     "changement(bool,int,int)\0l,c\0"
     "placer(int,int)\0"
 };
@@ -79,7 +79,7 @@ int observateurExpert::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: masque(); break;
+        case 0: masque((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 1: changement((*reinterpret_cast< bool(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
         case 2: placer((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
         default: ;
@@ -90,9 +90,10 @@ int observateurExpert::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void observateurExpert::masque()
+void observateurExpert::masque(int _t1)
 {
-    QMetaObject::activate(this, &staticMetaObject, 0, 0);
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 
 // SIGNAL 1

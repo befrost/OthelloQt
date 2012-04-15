@@ -62,6 +62,10 @@ struct Position
         return Position(numR + p.numR, numC + p.numC);
     }
 };
+struct Coup {							// structure représentant un coup joué.
+	Position pos;						// la position du coup
+	bool pionBlanc;					 	// la couleur du pion placé.
+};
 
 /*!
  * \brief Classe métier unique du jeu Othello.

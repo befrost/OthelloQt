@@ -72,17 +72,19 @@ void observateurTexte::rafraichir(SujetDObservation * sdo){
 		listeCoups->setText(str.c_str());
 		str2 = oth->toString();
 	  this->vuePlateau->setText(str2.c_str());
-	}else{
-	  switch (oth->vainqueur()){
-	     case 0 : this->setText("Match nul");break;
-	     case 1 : this->setText("Victoire du blanc"); break;
-	     case 2 : this->setText("Victoire du noir"); break;
+	}else{																			//si partie finie, affiche résultat.
+		std::string str2;
+		str2= oth->toString();
+		switch (oth->vainqueur()){
+	     case 0 : this->vuePlateau->setText((str2 + "\nMatch nul").c_str());break;
+	     case 1 : this->vuePlateau->setText((str2 + "\nVictoire du blanc").c_str()); break;
+	     case 2 : this->vuePlateau->setText((str2 + "\nVictoire du noir").c_str()); break;
 	  }
 	}
 }
 
 void observateurTexte::closeEvent(QCloseEvent * e){
-	emit masque();
+	emit masque(1);
 	//e->accept();
 }
 

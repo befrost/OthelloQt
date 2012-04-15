@@ -1,9 +1,8 @@
 <RCC>
     <qresource prefix="/">
-        <file>blanc.jpeg</file>
-        <file>noir.jpeg</file>
         <file>case_vierge.jpg</file>
         <file>pion_blanc.jpg</file>
         <file>pion_noir.jpg</file>
+        <file>coup_possible.jpg</file>
     </qresource>
 </RCC>

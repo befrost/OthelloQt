@@ -17,10 +17,6 @@
 #include <QMessageBox>
 
 
-struct Coup {							// structure représentant un coup joué.
-	Position pos;						// la position du coup
-	bool pionBlanc;					 	// la couleur du pion placé.
-};
 
 class OthelloQt : public QMainWindow, public SujetDObservation
 {
@@ -96,7 +92,7 @@ private slots:
     void obsExpert(bool actif);
 
     /* \brief
-     * Permet d'afficher un cadre avec les joueurs du jeu.
+     * Permet d'afficher un cadre avec les auteurs du jeu.
      */
 
     void auteur();
@@ -114,6 +110,8 @@ private slots:
 
 
     void chargerPartie();
+
+    void uncheck(int);
 };
 
 

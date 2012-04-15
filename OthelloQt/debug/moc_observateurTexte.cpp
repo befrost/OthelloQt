@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'observateurTexte.h'
 **
-** Created: Sun 15. Apr 04:11:35 2012
+** Created: Sun 15. Apr 19:23:41 2012
 **      by: The Qt Meta Object Compiler version 62 (Qt 4.7.3)
 **
 ** WARNING! All changes made in this file will be lost!
@@ -37,7 +37,7 @@ static const uint qt_meta_data_observateurTexte[] = {
 };
 
 static const char qt_meta_stringdata_observateurTexte[] = {
-    "observateurTexte\0\0masque()\0"
+    "observateurTexte\0\0masque(int)\0"
 };
 
 const QMetaObject observateurTexte::staticMetaObject = {
@@ -71,7 +71,7 @@ int observateurTexte::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: masque(); break;
+        case 0: masque((*reinterpret_cast< int(*)>(_a[1]))); break;
         default: ;
         }
         _id -= 1;
@@ -80,8 +80,9 @@ int observateurTexte::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void observateurTexte::masque()
+void observateurTexte::masque(int _t1)
 {
-    QMetaObject::activate(this, &staticMetaObject, 0, 0);
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 QT_END_MOC_NAMESPACE

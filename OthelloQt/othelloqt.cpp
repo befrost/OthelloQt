@@ -42,6 +42,8 @@ void OthelloQt::nouvellePartie(){
 
 
 	QString alphabet = "ABCDEFGHIJKL";
+	ui.colonne->clear();
+	ui.rangee->clear();
 	for(unsigned int i = 0; i < dia->getNbCol();i++){
 		ui.colonne->addItem((QString)alphabet[i]);
 	}
@@ -139,6 +141,8 @@ void OthelloQt::obsTexte(bool actif){
 			  obsTxt = new observateurTexte(othellier, this->pos());
 			  this->attacher(obsTxt);
 			  this->notifierChangement();
+			  connect(obsTxt, SIGNAL(masque(int)), this, SLOT(uncheck(int)));
+
 		  }
 
 
@@ -160,13 +164,13 @@ void OthelloQt::obsExpert(bool actif) {
 
 			obsExpe = new observateurExpert(othellier, this->pos());
 			connect(obsExpe, SIGNAL(changement(bool, int, int)), this, SLOT(change(bool, int, int)));
-
+			connect(obsExpe, SIGNAL(masque(int)), this, SLOT(uncheck(int)));
 		}
 		obsExpe->show();
 	} else {
 		obsExpe->hide();
 		this->notifierChangement();
-		ui.centralwidget->show();
+		//ui.centralwidget->show();
 		//ui.actionTexte->setEnabled(false);
 	}
 }
@@ -336,3 +340,10 @@ void OthelloQt::change(bool pionBlanc, int r, int c){
 
 }
 
+void OthelloQt::uncheck(int num){
+	if(num==1){
+		ui.actionTexte->setChecked(false);
+	}else{
+		ui.actionExpert->setChecked(false);
+	}
+}

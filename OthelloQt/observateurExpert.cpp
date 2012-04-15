@@ -86,7 +86,8 @@ observateurExpert::~observateurExpert() {
 }
 
 void observateurExpert::rafraichir(SujetDObservation * sdo) {
-	int val;
+	int val, k;
+	QVector<Position> liste = this->coupsPossibles(oth, absolute(oth->aQuiLeTour()-2) );
 	std::ostringstream oss;
 	std::string nomJoueur[]={"PERSONNE","BLANC","NOIR"};
 	if(!oth->estFini()){
@@ -123,6 +124,13 @@ void observateurExpert::rafraichir(SujetDObservation * sdo) {
 			}
 		}
 	}
+	for(k=0; k<liste.size(); k++){
+		int i,j;
+		i = liste.at(k).numR;
+		j = liste.at(k).numC;
+		tab[i][j]->setData(Qt::DecorationRole, QPixmap(":/coup_possible.jpg").scaled(56, 56));
+		plateau->setItem(i, j, tab[i][j]);
+	}
 }
 bool observateurExpert::absolute(int i){			//utile pour récupérer le tour du joueur
 	if(i<0){
@@ -133,9 +141,9 @@ bool observateurExpert::absolute(int i){			//utile pour récupérer le tour du jou
 
 void observateurExpert::placer(int l, int c) {
 	try {
+		pion = absolute(oth->aQuiLeTour()-2);
 		oth->placer(pion, Position(l, c));
 		emit changement(pion, l, c);
-		pion = absolute(oth->aQuiLeTour()-2);
 		this->attacher(this);
 		this->notifierChangement();
 
@@ -147,6 +155,32 @@ void observateurExpert::placer(int l, int c) {
 }
 
 void observateurExpert::closeEvent(QCloseEvent * e){
-	emit masque();
+	emit masque(2);
 	//e->accept();
 }
+
+QVector<Position> observateurExpert::coupsPossibles(Othello * oth, bool pionBlanc){
+	Othello * myOth;
+	QVector<Position> * liste;
+	struct Position coup;
+	liste = new QVector<Position>();
+	int i, j;
+	myOth = new Othello(*oth);
+
+	for(i=0; i<(int)myOth->colonnes(); ++i){
+		for(j=0; j<(int)myOth->rangees();++j){
+			try{
+				myOth->placer(pionBlanc, Position(j,i));
+				coup.numC=i;
+				coup.numR=j;
+				liste->append(coup);
+				delete myOth;
+				myOth = new Othello(*oth);
+			}catch(std::logic_error &e){
+
+			}
+		}
+	}
+	return * liste;
+}
+

@@ -33,7 +33,7 @@ private:
 	void closeEvent(QCloseEvent * e);
 
 signals:
-    void masque();
+    void masque(int);
 };
 
 #endif /* OBSERVATEURTEXTE_H_ */

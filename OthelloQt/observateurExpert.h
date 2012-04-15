@@ -21,7 +21,6 @@
 
 #ifndef OBSERVATEUREXPERT_H_
 #define OBSERVATEUREXPERT_H_
-
 class observateurExpert : public QWidget, public Observateur, public SujetDObservation {
 
 Q_OBJECT
@@ -40,10 +39,11 @@ private:
 	void rafraichir(SujetDObservation * sdo);
 	void closeEvent(QCloseEvent * e);
 	bool absolute(int);	//retourne valeur absolue
+	QVector <Position> coupsPossibles(Othello *, bool);
 private slots:
     void placer(int l, int c);
 signals:
-    void masque();
+    void masque(int);
     void changement(bool, int, int);
 };
 
